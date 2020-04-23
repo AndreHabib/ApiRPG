@@ -3,6 +3,8 @@ const express = require('express');
 
 const app = express();
 
+const PORT = process.env.PORT || 8877;
+
 app.use(express.json());
 
 const monsters = [{"id":"1","tittle":" Lobo","description":"Um animal selvagem comum muito traçoeiro.","img":"https://i.pinimg.com/564x/7b/c0/d1/7bc0d1dca2fe1524e5da98e200c7ebe0.jpg","category":"floresta"},
@@ -13,15 +15,15 @@ const monsters = [{"id":"1","tittle":" Lobo","description":"Um animal selvagem c
 {"id":"6","tittle":"Kraken","description":"Uma criatura mitológica dos mares.","img":"https://i.pinimg.com/564x/6a/58/70/6a587063397e80a192a9889a9e6216fc.jpg","category":"agua"}
 ];
 
-app.get('/monsters', (request,response) => {
-  
+app.get('/about', (request,response) => {
 
   return response.json({monsters});
 });
 
-app.listen(3333, () => {
-  console.log('BAck-end Started!');
-});
+app.listen(PORT, () =>{
+  console.log('Back-End Started');
+
+})
 
 
 // const  {tittle, description, img, category } = Request.query;
